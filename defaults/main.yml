@@ -1,0 +1,17 @@
+---
+# Run `nmcli c` and look for one with TYPE=ethernet. 
+NETWORK_ETHERNET_CONNECTION: "enp2s0"
+# Run `ip addr` and look for the mac address of the ethernet connection above. 
+NETWORK_BRIDGE_MAC: "40:40:40:40:40:40"
+# Run `nmcli d` and look for the DEVICE of the ethernet CONNECTION above. 
+NETWORK_ETHERNET_DEVICE: "enp2s0"
+# Run `ip addr` and look for the IP address of the ethernet connection above. 
+NETWORK_IP_ADDRESS: "192.168.0.2"
+# Set the gateway to be the NETWORK_IP_ADDRESS above with a 1 at the end instead of another number. 
+NETWORK_GATEWAY: "192.168.0.1"
+# You can set the DNS to the same as the NETWORK_GATEWAY above. 
+NETWORK_DNS: "192.168.0.1"
+# You can set this to be the name of the NETWORK_ETHERNET_CONNECTION before. 
+NETWORK_BRIDGE_SLAVE_CONNECTION: "{{ NETWORK_ETHERNET_CONNECTION }}" 
+# You can name these uniquely to other computers on the network with bridge networks: br0, br1, br2, etc. 
+NETWORK_BRIDGE_CONNECTION: "br0"

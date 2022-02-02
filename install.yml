@@ -1,0 +1,7 @@
+---
+- name: Install a VM Bridge Network locally
+  connection: local
+  hosts: localhost
+  roles:
+    - computate.computate_vm_network
+
